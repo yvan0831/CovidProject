@@ -4,7 +4,7 @@ SQL code for CovidProject showing the basics and fundamentals of using SQL for D
 </br>
 
 
-SQL functions used: SELECT, FROM, WHERE, GROUP BY, ORDER BY, JOINS, PARTITION
+SQL functions used: SELECT, FROM, WHERE, GROUP BY, ORDER BY, JOINS, PARTITION BY
 
 </br>
 
