@@ -113,7 +113,7 @@ WHERE dea.continent is not NULL
 SELECT * 
 FROM PercentPopulationVaccinated
 
--- Quieries used for Tableau Project
+-- Queries used for Tableau Project
 
 -- 1. 
 
