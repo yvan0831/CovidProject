@@ -117,7 +117,7 @@ FROM PercentPopulationVaccinated
 
 -- 1. 
 
-Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
+Select SUM(new_cases) as total_cases, SUM(new_deaths) as total_deaths, SUM(new_deaths)/SUM(New_Cases)*100 as DeathPercentage
 From PortfolioProject..CovidDeaths
 --Where location like '%states%'
 where continent is not null 
@@ -131,11 +131,12 @@ order by 1,2
 -- We take these out as they are not inluded in the above queries and want to stay consistent
 -- European Union is part of Europe
 
-Select location, SUM(cast(new_deaths as int)) as TotalDeathCount
+Select location, SUM(new_deaths) as TotalDeathCount
 From PortfolioProject..CovidDeaths
 --Where location like '%states%'
 Where continent is null 
-and location not in ('World', 'European Union', 'International', 'Upper middle income', 'High income', 'Lower middle income', 'Low income')
+and location not in ('World', 'European Union', 'International')
+and location not like '%income%'
 Group by location
 order by TotalDeathCount desc
 
